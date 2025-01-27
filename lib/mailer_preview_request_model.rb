@@ -29,7 +29,7 @@ module MailerPreviewRequestModel
             end
           else
             @part = find_preferred_part(request.format, Mime[:html], Mime[:text])
-            render action: 'email', layout: false, formats: %w[html]
+            render action: 'email', layout: false, formats: %i[html]
           end
         else
           raise AbstractController::ActionNotFound, "Email '#{email}' not found in #{@preview.name}"
